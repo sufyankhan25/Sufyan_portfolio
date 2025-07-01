@@ -33,7 +33,7 @@ const Hero = () => {
             <FaGithub className="text-4xl" />
           </a>
           <a
-            href="https://linkedin.com/in/muhammad-sufyan-b2aa63357"
+            href="https://www.linkedin.com/in/muhammad-sufyan-804921367"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-blue-500 transition duration-300"
@@ -42,7 +42,7 @@ const Hero = () => {
             <FaLinkedin className="text-4xl" />
           </a>
           <a
-            href="/resume.pdf"
+            href="/Resume.pdf"
             download="Muhammad_Sufyan_Resume.pdf"
             className="text-gray-300 hover:text-blue-500 transition duration-300"
             aria-label="Resume"
