@@ -65,24 +65,10 @@ const Hero = () => {
         <p className="text-xl text-gray-300 leading-relaxed">
           I'm a passionate MERN Stack Developer from Karachi, focused on building responsive and user-friendly web applications. With a deep understanding of the full stack, I bring together sleek frontend design and robust backend logic to deliver seamless digital experiences.
         </p>
-        <a
-          href="/resume.pdf"
-          download="Muhammad_Sufyan_Resume.pdf"
-          className="inline-block bg-blue-600 hover:bg-blue-700 active:bg-blue-800 px-8 py-3 rounded-full text-white font-semibold text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
-        >
-          Download Resume
-        </a>
+       
       </motion.section>
 
-      {/* Coming Soon Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="mt-20 text-center text-gray-400 text-xl italic"
-      >
-        <p>✨ More pages coming soon: Projects, Skills, Experience, Contact</p>
-      </motion.section>
+  
     </div>
   );
 };
