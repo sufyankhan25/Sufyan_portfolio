@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -16,14 +15,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-md shadow-lg">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] backdrop-blur-md shadow-xl transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-2xl md:text-3xl font-bold text-blue-500 tracking-wide">
-          <span className="text-white">Sufyan</span>.dev
-        </h1>
+        {/* Left Corner Logo */}
+        <Link to="hero" smooth={true} duration={500} offset={-80} className="cursor-pointer">
+          <h1 className="text-2xl md:text-3xl font-bold text-white hover:text-blue-400 tracking-wide transition-colors duration-300">
+            <span className="text-blue-400">Sufyan</span>.dev
+          </h1>
+        </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav (Right Corner) */}
         <ul className="hidden md:flex gap-8 items-center text-white text-sm font-semibold uppercase tracking-wide">
           {navLinks.map((link) => (
             <li key={link.id}>
@@ -32,16 +33,17 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="cursor-pointer relative group transition-all"
+                spy={true}
+                activeClass="text-blue-400 border-b border-blue-400"
+                className="cursor-pointer relative group py-2 transition-all duration-300 hover:text-blue-400"
               >
                 {link.label}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
           ))}
         </ul>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Toggle */}
         <div className="md:hidden text-white text-2xl cursor-pointer" onClick={() => setOpen(!open)}>
           {open ? <FaTimes /> : <FaBars />}
         </div>
@@ -49,7 +51,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-black/90 backdrop-blur-sm px-6 py-6 space-y-4 text-white text-lg font-medium">
+        <div className="md:hidden bg-black/90 backdrop-blur-sm px-6 py-6 space-y-4 text-white text-lg font-medium animate-slideDown">
           {navLinks.map((link) => (
             <div key={link.id} onClick={() => setOpen(false)}>
               <Link
@@ -57,7 +59,9 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="block cursor-pointer py-2 border-b border-gray-700"
+                spy={true}
+                activeClass="text-blue-400"
+                className="block cursor-pointer py-2 border-b border-gray-700 hover:text-blue-400 transition-colors"
               >
                 {link.label}
               </Link>
